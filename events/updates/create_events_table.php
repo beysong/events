@@ -15,9 +15,12 @@ class CreateEventsTable extends Migration
             $table->string('name')->nullable();
             $table->string('display_name')->nullable();
             $table->text('description')->nullable();
-            $table->text('permissions')->nullable();
             $table->boolean('is_activated')->default(1);
+            $table->timestamp('start_time')->nullable();
+            $table->timestamp('end_time')->nullable();
             $table->timestamps();
+            //软删除
+            $table->softDeletes();
         });
     }
 
