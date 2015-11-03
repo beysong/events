@@ -1,1 +1,6 @@
-1.0.1: First version of Events
+1.0.1:
+  - 创建表结构
+  - create_tickets_table.php
+  - create_orders_table.php
+  - create_order_details_table.php
+  - create_events_table.php
