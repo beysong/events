@@ -12,59 +12,27 @@ fields:
         label: Name
         commentAbove: Text field, required. Given name in the first box, preferred name in the second box.
 
-    # Record Finder (Default)
-    phone:
-        context: [create, update, recordfinder]
-        label: Record Finder
-        comment: Record finder field.
-        type: recordfinder
-        list: ~/plugins/october/test/models/phone/columns.yaml
-        prompt: Click the %s to find an alternative phone
-        nameFrom: name
-        descriptionFrom: number
+    display_name:
+        label: Display Name
 
-    # Relation Controller
-    phone@relationcontroller:
-        label: Relation Controller
-        commentAbove: RelationController used as a partial field type.
-        type: partial
+    description:
+        label: Description
 
-    # Proxy Fields
-    phone[name]:
-        context: proxyfields
-        span: auto
-        label: Phone Name
-        comment: Proxy text field for Phone model.
+    is_activated:
+        label: Enable
 
-    phone[number]:
-        context: proxyfields
-        span: auto
-        label: Phone Number
-        comment: Proxy text field for Phone model.
+    status:
+        label: Status
 
-    phone[created_at]:
-        context: proxyfields
-        span: left
-        label: Phone Created
-        comment: Proxy date picker field for Phone model.
+    start_time:
+        label: Start Time
         type: datepicker
+        mode: date
 
-    phone[picture]:
-        label: Picture
-        context: proxyfields
-        span: right
-        comment: Proxy file upload field for Phone model.
-        type: fileupload
-        mode: image
-        imageHeight: 260
-        imageWidth: 260
-
-    phone[brand]:
-        label: Brand
-        context: proxyfields
-        span: left
-        comment: Proxy dropdown field for Phone model.
-        type: dropdown
+    end_time:
+        label: End Time
+        type: datepicker
+        mode: date
 
 tabs:
 
