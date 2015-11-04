@@ -1,0 +1,34 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+
+    name:
+        label: Name
+        searchable: true
+
+    display_name:
+        label: Display Name
+        searchable: true
+
+    description:
+        label: Description
+
+    is_activated:
+        label: Is Activited
+        type: switch
+
+    status:
+        label: Status
+
+    start_time:
+        label: Start Time
+        type: datetime
+
+    end_time:
+        label: End Time
+        type: datetime
