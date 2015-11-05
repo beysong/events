@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: ~/plugins/october/test/models/person/columns.yaml
+list: ~/plugins/beysong/events/models/event/columns.yaml
 
 # Model Class name
-modelClass: October\Test\Models\Person
+modelClass: Beysong\Events\Models\Event
 
 # List Title
-title: Manage Peoples
+title: Manage Events
 
 # Link URL for each record
-recordUrl: october/test/people/update/:id
+recordUrl: beysong/events/events/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

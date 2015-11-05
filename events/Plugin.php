@@ -46,7 +46,7 @@ class Plugin extends PluginBase
 	                    'label'       => 'Events',
 	                    'icon'        => 'icon-copy',
 	                    'url'         => Backend::url('beysong/events/events'),
-	                    'permissions' => ['acme.blog.access_posts']
+	                    'permissions' => ['beysong.events.access_events']
 	                ],
 	                'categories' => [
 	                    'label'       => 'Categories',

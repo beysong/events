@@ -25,7 +25,45 @@ class Events extends Controller
 
         BackendMenu::setContext('Beysong.Events', 'test', 'event');
     }
+    
+    public function index()
+    {
+        $this->asExtension('ListController')->index();
+        $this->bodyClass = 'compact-container';
+    }
 
+
+    public function onCreateForm()
+    {
+        $this->asExtension('FormController')->create();
+        return $this->makePartial('create_form');
+    }
+
+    public function onCreate()
+    {
+        $this->asExtension('FormController')->create_onSave();
+        return $this->listRefresh('comments');
+    }
+
+    public function onUpdateForm()
+    {
+        $this->asExtension('FormController')->update(post('record_id'));
+        $this->vars['recordId'] = post('record_id');
+        return $this->makePartial('update_form');
+    }
+
+    public function onUpdate()
+    {
+        $this->asExtension('FormController')->update_onSave(post('record_id'));
+        return $this->listRefresh('comments');
+    }
+
+    public function onDelete()
+    {
+        $this->asExtension('FormController')->update_onDelete(post('record_id'));
+        return $this->listRefresh('comments');
+    }
+    
     public function formExtendModel($model)
     {
         /*

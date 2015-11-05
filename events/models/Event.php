@@ -13,7 +13,7 @@ class Event extends Model
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'october_beyond_events';
+    public $table = 'beysong_events';
 
     /**
      * @var array Guarded fields
@@ -34,6 +34,7 @@ class Event extends Model
 
     public $hasMany = [
         'tickets' => ['Beysong\Events\Models\Ticket', 'scope' => 'isVisible'],
+        'orders' => ['Beysong\Events\Models\Order', 'scope' => 'isVisible'],
     ];
     /**
      * @var array Relations

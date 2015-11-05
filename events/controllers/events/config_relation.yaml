@@ -3,6 +3,6 @@
 # ===================================
 
 phone:
-    label: Phone
-    form: ~/plugins/october/test/models/phone/fields.yaml
-    list: ~/plugins/october/test/models/phone/columns.yaml
+    label: Event
+    form: ~/plugins/beysong/events/models/event/fields.yaml
+    list: ~/plugins/beysong/events/models/event/columns.yaml
