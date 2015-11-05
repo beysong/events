@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Person
+name: Event
 
 # Model Form Field configuration
 form: ~/plugins/beysong/events/models/event/fields.yaml

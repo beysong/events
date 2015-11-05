@@ -1,7 +1,5 @@
 <?php namespace Beysong\Events;
 
-use App;
-use Event;
 use Backend;
 use System\Classes\PluginBase;
 
@@ -10,6 +8,7 @@ use System\Classes\PluginBase;
  */
 class Plugin extends PluginBase
 {
+	
     /**
      * @var array Plugin dependencies
      */
@@ -24,35 +23,31 @@ class Plugin extends PluginBase
     {
         return [
             'name'        => 'Events',
-            'description' => 'No description provided yet...',
+            'description' => 'Events description ...',
             'author'      => 'Beysong',
             'icon'        => 'icon-leaf',
-            'homepage'        => 'http://'
         ];
     }
     
 	public function registerNavigation()
 	{
 	    return [
-	        'event' => [
+	        'events' => [
 	            'label'       => 'Events',
 	            'url'         => Backend::url('beysong/events/events'),
 	            'icon'        => 'icon-pencil',
-	            'permissions' => ['acme.blog.*'],
 	            'order'       => 500,
 
 	            'sideMenu' => [
-	                'event' => [
+	                'events' => [
 	                    'label'       => 'Events',
 	                    'icon'        => 'icon-copy',
 	                    'url'         => Backend::url('beysong/events/events'),
-	                    'permissions' => ['beysong.events.access_events']
 	                ],
-	                'categories' => [
-	                    'label'       => 'Categories',
+	                'tickets' => [
+	                    'label'       => 'Tickets',
 	                    'icon'        => 'icon-copy',
-	                    'url'         => Backend::url('acme/blog/categories'),
-	                    'permissions' => ['acme.blog.access_categories']
+	                    'url'         => Backend::url('beysong/events/tickets'),
 	                ]
 	            ]
 	        ]
