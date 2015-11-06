@@ -6,35 +6,26 @@ fields:
 
     name:
         label: Name
-        commentAbove: Text field, required.
+        commentAbove: Text field, required. Given name in the first box, preferred name in the second box.
 
-    comments:
-        label: Comments
-        commentAbove: RelationController used as a partial field type.
-        type: partial
+    display_name:
+        label: Display Name
 
-tabs:
-    fields:
+    description:
+        label: Description
 
-        content:
-            label: Content
-            type: codeeditor
-            size: huge
-            tab: Code Editor
-            # language: text
-            commentAbove: Code editor field.
+    is_activated:
+        label: Enable
 
-        content_md:
-            label: Content
-            type: markdown
-            size: huge
-            mode: split
-            tab: Markdown Editor
-            commentAbove: Markdown editor field.
+    price:
+        label: Price
 
-        content_html:
-            label: Content
-            type: richeditor
-            size: huge
-            tab: Rich Editor
-            commentAbove: Rich editor (WYSIWYG) field.
+    start_time:
+        label: Start Time
+        type: datepicker
+        mode: date
+
+    end_time:
+        label: End Time
+        type: datepicker
+        mode: date

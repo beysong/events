@@ -11,12 +11,27 @@ columns:
         label: Name
         searchable: true
 
-    content:
-        label: Content
+    display_name:
+        label: Display Name
         searchable: true
 
-    comments_count:
-        label: Comments
+    description:
+        label: Description
+
+    price:
+        label: Price
         relation: comments_count
         valueFrom: count
         default: 0
+
+    is_activated:
+        label: Is Activited
+        type: switch
+
+    start_time:
+        label: Start Time
+        type: datetime
+
+    end_time:
+        label: End Time
+        type: datetime
