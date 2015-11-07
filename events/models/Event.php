@@ -25,6 +25,8 @@ class Event extends Model
      */
     protected $fillable = [];
 
+    protected $dates = ['start_time','end_time'];
+
     /**
      * @var array Rules
      */

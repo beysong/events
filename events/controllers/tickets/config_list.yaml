@@ -12,7 +12,7 @@ modelClass: Beysong\Events\Models\Ticket
 title: Manage Ticket
 
 # Link URL for each record
-recordUrl: october/test/phones/update/:id
+recordUrl: beysong/events/tickets/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

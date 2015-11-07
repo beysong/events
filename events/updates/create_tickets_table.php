@@ -18,6 +18,8 @@ class CreateTicketsTable extends Migration
             $table->text('description')->nullable();
             $table->decimal('price', 11, 2)->default(0.00);
             $table->tinyInteger('is_activated')->default(1);
+            $table->timestamp('start_time');
+            $table->timestamp('end_time');
             $table->timestamps();
         });
     }

@@ -14,6 +14,7 @@ class CreateEventsTable extends Migration
             $table->increments('id');
             $table->string('name')->nullable();
             $table->string('display_name')->nullable();
+            $table->string('currency')->nullable();
             $table->text('description')->nullable();
             $table->tinyInteger('is_activated')->default(1);
             $table->tinyInteger('status')->default(1);

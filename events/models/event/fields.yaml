@@ -27,9 +27,9 @@ fields:
     start_time:
         label: Start Time
         type: datepicker
-        mode: date
+        mode: datetime
 
     end_time:
         label: End Time
         type: datepicker
-        mode: date
+        mode: datetime
