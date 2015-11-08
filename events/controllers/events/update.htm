@@ -1,6 +1,6 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('beysong/events/events') ?>">Event</a></li>
+        <li><a href="<?= Backend::url('beysong/events/events') ?>">Events</a></li>
         <li><?= e(trans($this->pageTitle)) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -8,8 +8,6 @@
 <?php if (!$this->fatalError): ?>
 
     <?= Form::open(['class' => 'layout']) ?>
-
-        <?= $this->makePartial('form_toggle') ?>
 
         <div class="layout-row">
             <?= $this->formRender() ?>
@@ -22,7 +20,7 @@
                     data-request="onSave"
                     data-request-data="redirect:0"
                     data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="Saving Person..."
+                    data-load-indicator="Saving Event..."
                     class="btn btn-primary">
                     <u>S</u>ave
                 </button>
@@ -31,7 +29,7 @@
                     data-request="onSave"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="Saving Person..."
+                    data-load-indicator="Saving Event..."
                     class="btn btn-default">
                     Save and Close
                 </button>
@@ -39,8 +37,8 @@
                     type="button"
                     class="oc-icon-trash-o btn-icon danger pull-right"
                     data-request="onDelete"
-                    data-load-indicator="Deleting Person..."
-                    data-request-confirm="Do you really want to delete this person?">
+                    data-load-indicator="Deleting Event..."
+                    data-request-confirm="Do you really want to delete this event?">
                 </button>
                 <span class="btn-text">
                     or <a href="<?= Backend::url('beysong/events/events') ?>">Cancel</a>
@@ -53,6 +51,6 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e(trans($this->fatalError)) ?></p>
-    <p><a href="<?= Backend::url('beysong/events/events') ?>" class="btn btn-default">Return to Event list</a></p>
+    <p><a href="<?= Backend::url('beysong/events/events') ?>" class="btn btn-default">Return to events list</a></p>
 
 <?php endif ?>

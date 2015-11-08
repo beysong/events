@@ -36,10 +36,9 @@ class Ticket extends Model
 
     /**
      * @var array Relations
-     
-    public $hasMany = [
-        'comments' => ['October\Test\Models\Comment', 'scope' => 'isVisible'],
-        'comments_count' => ['October\Test\Models\Comment', 'scope' => 'isVisible', 'count' => true]
-    ];*/
+     */
+    public $belongsTo = [
+        'event' => ['Beysong\Events\Models\Event']
+    ];
 
 }

@@ -2,10 +2,11 @@
 
 use BackendMenu;
 use Backend\Classes\Controller;
-use Beysong\Events\Models\Event;
 
 /**
- * People Back-end Controller
+ * Events [and Tickets] Back-end Controller
+ *
+ *
  */
 class Events extends Controller
 {
@@ -15,29 +16,59 @@ class Events extends Controller
         'Backend.Behaviors.RelationController',
     ];
 
-    public $formConfig = 'config_form.yaml';
-    public $listConfig = 'config_list.yaml';
+    public $formConfig = 'config_event_form.yaml';
+    public $listConfig = ['events' => 'config_events_list.yaml', 'tickets' => 'config_tickets_list.yaml'];
     public $relationConfig = 'config_relation.yaml';
 
     public function __construct()
     {
+        if (post('ticket_mode'))
+            $this->formConfig = 'config_ticket_form.yaml';
+
         parent::__construct();
 
         BackendMenu::setContext('Beysong.Events', 'events', 'events');
     }
-    
 
-    public function formExtendModel($model)
+    public function index()
     {
-        /*
-         * Init proxy field model if we are creating the model
-         * and the context is proxy fields.
-         */
-        if ($this->action == 'create' && $this->formGetContext() == 'proxyfields') {
-            $model->phone = new Phone;
-        }
+        $this->asExtension('ListController')->index();
+        $this->bodyClass = 'compact-container';
+    }
 
-        return $model;
+    //
+    // Comment form
+    //
+
+    public function onCreateForm()
+    {
+        $this->asExtension('FormController')->create();
+        return $this->makePartial('create_form');
+    }
+
+    public function onCreate()
+    {
+        $this->asExtension('FormController')->create_onSave();
+        return $this->listRefresh('tickets');
+    }
+
+    public function onUpdateForm()
+    {
+        $this->asExtension('FormController')->update(post('record_id'));
+        $this->vars['recordId'] = post('record_id');
+        return $this->makePartial('update_form');
+    }
+
+    public function onUpdate()
+    {
+        $this->asExtension('FormController')->update_onSave(post('record_id'));
+        return $this->listRefresh('tickets');
+    }
+
+    public function onDelete()
+    {
+        $this->asExtension('FormController')->update_onDelete(post('record_id'));
+        return $this->listRefresh('tickets');
     }
 
 }

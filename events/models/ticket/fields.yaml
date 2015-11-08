@@ -4,6 +4,14 @@
 
 fields:
 
+    # Hide this field for context 'relation'
+    event:
+        type: relation
+        nameFrom: name
+        emptyOption: -- Select Event --
+        comment: This Ticket belongs to the Event selected above.
+        context: ['create', 'update']
+
     name:
         label: Name
         commentAbove: Text field, required. Given name in the first box, preferred name in the second box.

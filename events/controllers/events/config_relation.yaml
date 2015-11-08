@@ -2,7 +2,10 @@
 #  Relation Behavior Config
 # ===================================
 
-phone:
-    label: Event
-    form: ~/plugins/beysong/events/models/event/fields.yaml
-    list: ~/plugins/beysong/events/models/event/columns.yaml
+tickets:
+    label: Ticket
+    list: ~/plugins/beysong/events/models/ticket/columns.yaml
+    form: ~/plugins/beysong/events/models/ticket/fields.yaml
+    manage:
+        context: relation
+

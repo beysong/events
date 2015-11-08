@@ -33,3 +33,8 @@ fields:
         label: End Time
         type: datepicker
         mode: datetime
+
+    tickets:
+        label: Tickets
+        commentAbove: RelationController used as a partial field type.
+        type: partial

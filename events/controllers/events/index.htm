@@ -1,12 +1,24 @@
-
-<?= $this->listRender() ?>
+<div class="control-tabs content-tabs tabs-flush" data-control="tab">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="#events">Events</a></li>
+        <li><a href="#tickets">Tickets</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane active">
+            <?= $this->listRender('events') ?>
+        </div>
+        <div class="tab-pane">
+            <?= $this->listRender('tickets') ?>
+        </div>
+    </div>
+</div>
 
 <div class="padded-container">
     <div class="callout callout-warning">
         <div class="header">
             <i class="icon-database"></i>
-            <h3>A Person "Has One" Phone ---</h3>
-            <p>One to one relationship</p>
+            <h3>A Event "Has Many" Tickets</h3>
+            <p>One to many relationship</p>
         </div>
     </div>
 </div>

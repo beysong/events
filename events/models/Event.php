@@ -35,8 +35,8 @@ class Event extends Model
     ];
 
     public $hasMany = [
-        'tickets' => ['Beysong\Events\Models\Ticket', 'scope' => 'isVisible'],
-        'orders' => ['Beysong\Events\Models\Order', 'scope' => 'isVisible'],
+        'tickets' => ['Beysong\Events\Models\Ticket'],
+        'orders' => ['Beysong\Events\Models\Order'],
     ];
     /**
      * @var array Relations
