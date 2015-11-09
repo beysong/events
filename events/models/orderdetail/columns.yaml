@@ -1,0 +1,43 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+
+    first_name:
+        label: first_name
+        searchable: true
+
+    last_name:
+        label: last_name
+        searchable: true
+
+    email:
+        label: email
+
+    mobile:
+        label: mobile
+
+    telphone:
+        label: telphone
+
+    company:
+        label: company
+
+    title:
+        label: title
+
+    country:
+        label: country
+
+    address:
+        label: address
+
+    zip:
+        label: zip
+
+    photo:
+        label: photo

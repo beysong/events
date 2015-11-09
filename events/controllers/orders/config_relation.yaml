@@ -1,0 +1,11 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+tickets:
+    label: Ticket
+    list: ~/plugins/beysong/events/models/ticket/columns.yaml
+    form: ~/plugins/beysong/events/models/ticket/fields.yaml
+    manage:
+        context: relation
+

@@ -1,0 +1,8 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+events:
+    label: Event
+    list: ~/plugins/beysong/events/models/event/columns.yaml
+    form: ~/plugins/beysong/events/models/event/fields.yaml

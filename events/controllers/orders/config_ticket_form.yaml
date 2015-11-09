@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Ticket
+
+# Model Form Field configuration
+form: ~/plugins/beysong/events/models/ticket/fields.yaml
+
+# Model Class name
+modelClass: Beysong\Events\Models\Ticket
+
+# Default redirect location
+defaultRedirect: beysong/events/events
+
+# Create page
+create:
+    title: Create Tickets
+    redirect: beysong/events/events/update/:id
+    redirectClose: beysong/events/events
+
+# Update page
+update:
+    title: Edit Tickets
+    redirect: beysong/events/events
+    redirectClose: beysong/events/events
+
+# Preview page
+preview:
+    title: Preview Tickets

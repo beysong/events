@@ -1,0 +1,42 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+#
+#  These fields explore the use of context; the "phone" field is rendered in
+#  different ways depending on the context used by the form, passed in by 
+#  the URL.
+# ===================================
+
+fields:
+    total_amount:
+        label: total_amount
+        commentAbove: Text field, required. Given name in the first box, preferred name in the second box.
+
+    real_amount:
+        label: real_amount
+
+    discount_amount:
+        label: discount_amount
+
+    paid_amount:
+        label: paid_amount
+
+    trade_no:
+        label: trade_no
+
+    pay_code:
+        label: pay_code
+
+    badge_code:
+        label: badge_code
+
+    pay_status:
+        label: pay_status
+
+    status:
+        label: status
+
+    order_details:
+        label: order_details
+        commentAbove: RelationController used as a partial field type.
+        type: partial
