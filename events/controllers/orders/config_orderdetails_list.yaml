@@ -3,17 +3,17 @@
 # ===================================
 
 # Model List Column configuration
-list: ~/plugins/beysong/events/models/ticket/columns.yaml
+list: ~/plugins/beysong/events/models/orderdetail/columns.yaml
 
 # Model Class name
-modelClass: Beysong\Events\Models\Ticket
+modelClass: Beysong\Events\Models\OrderDetail
 
 # List Title
-title: Manage Tickets
+title: Manage Order Details
 
 # Link URL for each record
 # recordUrl: beysong/events/events/update/:id
-recordOnClick: $.popup({ handler: 'onUpdateForm', extraData: { ticket_mode: 1, record_id: ':id' } })
+recordOnClick: $.popup({ handler: 'onUpdateForm', extraData: { order_mode: 1, record_id: ':id' } })
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records
@@ -38,7 +38,7 @@ showSorting: true
 # Toolbar widget configuration
 toolbar:
     # Partial for toolbar buttons
-    buttons: list_tickets_toolbar
+    buttons: list_orderdetails_toolbar
 
     # Search widget configuration
     search:

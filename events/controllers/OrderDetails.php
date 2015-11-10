@@ -23,7 +23,7 @@ class Tickets extends Controller
     {
         parent::__construct();
 
-        BackendMenu::setContext('Beysong.Events', 'events', 'events');
+        BackendMenu::setContext('Beysong.Events', 'events', 'orders');
     }
     
 

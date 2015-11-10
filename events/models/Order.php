@@ -31,7 +31,6 @@ class Order extends Model
      * @var array Rules
      */
     public $rules = [
-        'name' => 'required',
     ];
 
     public $hasMany = [

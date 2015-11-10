@@ -4,11 +4,11 @@ use BackendMenu;
 use Backend\Classes\Controller;
 
 /**
- * Events [and Tickets] Back-end Controller
+ * Orders [and OrderDetails] Back-end Controller
  *
  *
  */
-class Events extends Controller
+class Orders extends Controller
 {
     public $implement = [
         'Backend.Behaviors.FormController',
@@ -16,18 +16,18 @@ class Events extends Controller
         'Backend.Behaviors.RelationController',
     ];
 
-    public $formConfig = 'config_event_form.yaml';
-    public $listConfig = ['events' => 'config_events_list.yaml', 'tickets' => 'config_tickets_list.yaml'];
+    public $formConfig = 'config_order_form.yaml';
+    public $listConfig = ['orders' => 'config_orders_list.yaml', 'orderdetails' => 'config_orderdetails_list.yaml'];
     public $relationConfig = 'config_relation.yaml';
 
     public function __construct()
     {
-        if (post('ticket_mode'))
-            $this->formConfig = 'config_ticket_form.yaml';
+        if (post('order_mode'))
+            $this->formConfig = 'config_orderdetail_form.yaml';
 
         parent::__construct();
 
-        BackendMenu::setContext('Beysong.Events', 'events', 'events');
+        BackendMenu::setContext('Beysong.Events', 'events', 'orders');
     }
 
     public function index()
@@ -49,7 +49,7 @@ class Events extends Controller
     public function onCreate()
     {
         $this->asExtension('FormController')->create_onSave();
-        return $this->listRefresh('tickets');
+        return $this->listRefresh('orderdetails');
     }
 
     public function onUpdateForm()
@@ -62,13 +62,13 @@ class Events extends Controller
     public function onUpdate()
     {
         $this->asExtension('FormController')->update_onSave(post('record_id'));
-        return $this->listRefresh('tickets');
+        return $this->listRefresh('orderdetails');
     }
 
     public function onDelete()
     {
         $this->asExtension('FormController')->update_onDelete(post('record_id'));
-        return $this->listRefresh('tickets');
+        return $this->listRefresh('orderdetails');
     }
 
 }

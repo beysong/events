@@ -31,7 +31,6 @@ class OrderDetail extends Model
      * @var array Rules
      */
     public $rules = [
-        'name' => 'required',
     ];
 
     /**

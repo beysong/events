@@ -7,9 +7,9 @@ fields:
     # Hide this field for context 'relation'
     order:
         type: relation
-        nameFrom: name
-        emptyOption: -- Select Event --
-        comment: This Ticket belongs to the Event selected above.
+        nameFrom: id
+        emptyOption: -- Select Order --
+        comment: This Order Detail belongs to the Order selected above.
         context: ['create', 'update']
 
     first_name:

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Order
+
+# Model Form Field configuration
+form: ~/plugins/beysong/events/models/order/fields.yaml
+
+# Model Class name
+modelClass: Beysong\Events\Models\Order
+
+# Default redirect location
+defaultRedirect: beysong/events/orders
+
+# Create page
+create:
+    title: Create Orders
+    redirect: beysong/events/orders/update/:id
+    redirectClose: beysong/events/orders
+
+# Update page
+update:
+    title: Edit Orders
+    redirect: beysong/events/orders
+    redirectClose: beysong/events/orders
+
+# Preview page
+preview:
+    title: Preview Orders

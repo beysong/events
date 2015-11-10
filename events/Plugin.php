@@ -48,6 +48,11 @@ class Plugin extends PluginBase
 	                    'label'       => 'Tickets',
 	                    'icon'        => 'icon-copy',
 	                    'url'         => Backend::url('beysong/events/tickets'),
+	                ],
+	                'orders' => [
+	                    'label'       => 'Orders',
+	                    'icon'        => 'icon-copy',
+	                    'url'         => Backend::url('beysong/events/orders'),
 	                ]
 	            ]
 	        ]

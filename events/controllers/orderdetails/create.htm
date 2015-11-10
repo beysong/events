@@ -1,7 +1,7 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('beysong/events/events') ?>">Events</a></li>
-        <li><a href="<?= Backend::url('beysong/events/tickets') ?>">Tickets</a></li>
+        <li><a href="<?= Backend::url('beysong/events/orders') ?>">Orders</a></li>
+        <li><a href="<?= Backend::url('beysong/events/orderdetails') ?>">Order Details</a></li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -24,7 +24,7 @@
                     type="submit"
                     data-request="onSave"
                     data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="Creating Ticket..."
+                    data-load-indicator="Creating Order Detail..."
                     class="btn btn-primary">
                     Create
                 </button>
@@ -33,12 +33,12 @@
                     data-request="onSave"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="Creating Ticket..."
+                    data-load-indicator="Creating Order Detail..."
                     class="btn btn-default">
                     Create and Close
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('beysong/events/tickets') ?>">Cancel</a>
+                    or <a href="<?= Backend::url('beysong/events/orderdetails') ?>">Cancel</a>
                 </span>
             </div>
         </div>

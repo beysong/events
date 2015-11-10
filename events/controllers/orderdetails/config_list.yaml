@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/beysong/events/models/ticket/columns.yaml
+list: $/beysong/events/models/orderdetail/columns.yaml
 
 # Model Class name
-modelClass: Beysong\Events\Models\Ticket
+modelClass: Beysong\Events\Models\OrderDetail
 
 # List Title
-title: Manage Ticket
+title: Manage Order Detail
 
 # Link URL for each record
-recordUrl: beysong/events/tickets/update/:id
+recordUrl: beysong/events/orderdetails/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

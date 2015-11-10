@@ -1,14 +1,14 @@
 <div class="control-tabs content-tabs tabs-flush" data-control="tab">
     <ul class="nav nav-tabs">
-        <li class="active"><a href="#events">Events</a></li>
-        <li><a href="#tickets">Tickets</a></li>
+        <li class="active"><a href="#orders">Orders</a></li>
+        <li><a href="#orderdetails">Order Details</a></li>
     </ul>
     <div class="tab-content">
         <div class="tab-pane active">
-            <?= $this->listRender('events') ?>
+            <?= $this->listRender('orders') ?>
         </div>
         <div class="tab-pane">
-            <?= $this->listRender('tickets') ?>
+            <?= $this->listRender('orderdetails') ?>
         </div>
     </div>
 </div>
@@ -17,7 +17,7 @@
     <div class="callout callout-warning">
         <div class="header">
             <i class="icon-database"></i>
-            <h3>A Event "Has Many" Tickets</h3>
+            <h3>A Order "Has Many" Order Details</h3>
             <p>One to many relationship</p>
         </div>
     </div>

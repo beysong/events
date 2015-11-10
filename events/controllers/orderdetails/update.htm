@@ -1,7 +1,7 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
-        <li><a href="<?= Backend::url('beysong/events/events') ?>">Events</a></li>
-        <li><a href="<?= Backend::url('beysong/events/tickets') ?>">Tickets</a></li>
+        <li><a href="<?= Backend::url('beysong/events/orders') ?>">Orders</a></li>
+        <li><a href="<?= Backend::url('beysong/events/orderdetails') ?>">Order Details</a></li>
         <li><?= e($this->pageTitle) ?></li>
     </ul>
 <?php Block::endPut() ?>
@@ -25,7 +25,7 @@
                     data-request="onSave"
                     data-request-data="redirect:0"
                     data-hotkey="ctrl+s, cmd+s"
-                    data-load-indicator="Saving Ticket..."
+                    data-load-indicator="Saving Order Detail..."
                     class="btn btn-primary">
                     <u>S</u>ave
                 </button>
@@ -34,7 +34,7 @@
                     data-request="onSave"
                     data-request-data="close:1"
                     data-hotkey="ctrl+enter, cmd+enter"
-                    data-load-indicator="Saving Ticket..."
+                    data-load-indicator="Saving Order Detail..."
                     class="btn btn-default">
                     Save and Close
                 </button>
@@ -42,11 +42,11 @@
                     type="button"
                     class="oc-icon-trash-o btn-icon danger pull-right"
                     data-request="onDelete"
-                    data-load-indicator="Deleting Ticket..."
-                    data-request-confirm="Do you really want to delete this ticket?">
+                    data-load-indicator="Deleting Order Detail..."
+                    data-request-confirm="Do you really want to delete this Order Detail?">
                 </button>
                 <span class="btn-text">
-                    or <a href="<?= Backend::url('beysong/events/tickets') ?>">Cancel</a>
+                    or <a href="<?= Backend::url('beysong/events/orderdetails') ?>">Cancel</a>
                 </span>
             </div>
         </div>
@@ -56,6 +56,6 @@
 <?php else: ?>
 
     <p class="flash-message static error"><?= e($this->fatalError) ?></p>
-    <p><a href="<?= Backend::url('beysong/events/tickets') ?>" class="btn btn-default">Return to tickets list</a></p>
+    <p><a href="<?= Backend::url('beysong/events/orderdetails') ?>" class="btn btn-default">Return to order details list</a></p>
 
 <?php endif ?>
