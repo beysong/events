@@ -22,15 +22,19 @@ fields:
 
     email:
         label: email
+        searchable: true
 
     mobile:
         label: mobile
+        searchable: true
 
     telphone:
         label: telphone
+        searchable: true
 
     company:
         label: company
+        searchable: true
 
     title:
         label: title
