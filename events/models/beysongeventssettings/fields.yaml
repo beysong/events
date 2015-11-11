@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+#
+#  These fields explore the use of context; the "phone" field is rendered in
+#  different ways depending on the context used by the form, passed in by 
+#  the URL.
+# ===================================
+
+fields:
+  alipay_id:
+    label: Your Alipay ID
+    placeholder: UA-XXXXXXXX-X
+
+  alipay_key:
+    label: Your Alipay Key
+    placeholder: UA-XXXXXXXX-X

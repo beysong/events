@@ -1,4 +1,4 @@
-<?php namespace Acme\Blog\Components;
+<?php namespace Beysong\Events\Components;
 
 class Events extends \Cms\Classes\ComponentBase
 {

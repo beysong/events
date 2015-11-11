@@ -65,5 +65,17 @@ class Plugin extends PluginBase
 	        'Beysong\Events\Components\Events' => 'Events'
 	    ];
 	}
+	
+	public function registerSettings(){
+	    return [
+	        'settings' => [
+	            'label'       => 'Alipay Code',
+	            'description' => 'Manage Alipay Settings.',
+	            'icon'        => 'icon-bar-chart-o',
+	            'class'       => 'Beysong\Events\Models\BeysongEventsSettings',
+	            'order'       => 1
+	        ]
+	    ];
+	}
 
 }
