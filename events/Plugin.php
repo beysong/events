@@ -58,5 +58,12 @@ class Plugin extends PluginBase
 	        ]
 	    ];
 	}
+	
+	public function registerComponents()
+	{
+	    return [
+	        'Beysong\Events\Components\Events' => 'Events'
+	    ];
+	}
 
 }
