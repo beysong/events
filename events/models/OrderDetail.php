@@ -40,4 +40,17 @@ class OrderDetail extends Model
         'order' => ['Beysong\Events\Models\Order']
     ];
 
+    /**
+     * @var array Relations
+     */
+    public $belongsToMany  = [
+        'tickets' => [
+        'Beysong\Events\Models\Ticket',
+        'table'    => 'beysong_order_detail_ticket',
+        'key'      => 'order_details_id',
+        'otherKey' => 'ticket_id',
+        'pivot' => ['name', 'display_name', 'description', 'price']
+        ]
+    ];
+
 }
