@@ -62,7 +62,7 @@ class Plugin extends PluginBase
 	public function registerComponents()
 	{
 	    return [
-	        'Beysong\Events\Components\Events' => 'Events'
+	        'Beysong\Events\Components\Events' => 'beysongEvents'
 	    ];
 	}
 	
