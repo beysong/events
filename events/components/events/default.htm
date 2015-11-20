@@ -1,1 +1,9 @@
-sdf
+{% set tickets = __SELF__.tickets %}
+{% if tickets %}
+	<ul>
+    {% for ticket in tickets %}
+        <li>{{ ticket.name }}</li>
+    {% endfor %}
+	</ul>
+{% endif %}
+

@@ -20,7 +20,9 @@ class Events extends \Cms\Classes\ComponentBase
     // This array becomes available on the page as {{ component.posts }}
     public function tickets()
     {
-        return ['First tickets', 'Second tickets', 'Third tickets'];
+    	$event_id = $this->property('events');
+    	$tickets = BeysongEvent::find($event_id)->tickets;
+        return $tickets;
     }
     //
     public function defineProperties()
@@ -35,8 +37,20 @@ class Events extends \Cms\Classes\ComponentBase
     }
 
     public function getEventsOptions()
+    {	
+    	$events = BeysongEvent::where('end_time','>',time())->lists('name','id');
+        return $events;
+    }
+
+    /**
+     * Executed when this component is bound to a page or layout.
+     */
+    public function onRun()
     {
-        return ['1'=>'event1', '2'=>'event2'];
+    //	$event_id = $this->property('events');
+    //	$tickets = BeysongEvent::find($event_id)->tickets;
+    //	$this->page['tickets'] = $tickets;
+
     }
 
 
