@@ -1,6 +1,9 @@
 <?php namespace Beysong\Events\Components;
 
 use Beysong\Events\Models\Event as BeysongEvent;
+use Beysong\Events\Models\Order as Order;
+use Beysong\Events\Models\OrderDetail as OrderDetail;
+use Beysong\Events\Models\Ticket as Ticket;
 
 class Events extends \Cms\Classes\ComponentBase
 {
@@ -12,12 +15,13 @@ class Events extends \Cms\Classes\ComponentBase
         ];
     }
 
-    // This array becomes available on the page as {{ component.posts }}
-    public function events()
+    //Now event id
+    public function event_id()
     {
-        return ['First events', 'Second events', 'Third events'];
+        return $this->property('events');
     }
-    // This array becomes available on the page as {{ component.posts }}
+
+    // Tickets of current event
     public function tickets()
     {
     	$event_id = $this->property('events');
@@ -58,9 +62,19 @@ class Events extends \Cms\Classes\ComponentBase
 
     public function onRegisterPersons()
     {	
-    	$value1 = post('first_name',['1212']);
-    	$this->page['result'] = $value1;
-    	$this->page['result2'] = '2222';
+    	$first_name = post('first_name');
+        $last_name = post('last_name');
+        $company = post('company');
+        $title = post('title');
+        $mobile = post('mobile');
+        $email = post('email');
+        $tickets = post('tickets');
+        $first_name = post('first_name');
+
+        $event_id = post('event_id');
+        $user_id = post('user_id');
+
+
     }
 
 
