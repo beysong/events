@@ -47,12 +47,21 @@ class Events extends \Cms\Classes\ComponentBase
      */
     public function onRun()
     {
+    	$this->addCss('/plugins/beysong/events/assets/bootstrapvalidator/dist/css/bootstrapValidator.css');
+    	$this->addJs('/plugins/beysong/events/assets/bootstrapvalidator/dist/js/bootstrapValidator.min.js');
+    	$this->addJs('/plugins/beysong/events/assets/js/events.js');
     //	$event_id = $this->property('events');
     //	$tickets = BeysongEvent::find($event_id)->tickets;
     //	$this->page['tickets'] = $tickets;
 
     }
 
+    public function onRegisterPersons()
+    {	
+    	$value1 = post('first_name',['1212']);
+    	$this->page['result'] = $value1;
+    	$this->page['result2'] = '2222';
+    }
 
 
 }
