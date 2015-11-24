@@ -12,9 +12,13 @@
         <h3 class="panel-title">Register</h3>
     </div>
     <div class="panel-body">
-	<form id="addPerson" data-request="{{__SELF__}}::onRegisterPersons" data-request-update="'{{__SELF__}}::list': '#result'">
+	<form id="addPersonForm" data-request="{{__SELF__}}::onRegisterPersons" data-request-update="'{{__SELF__}}::list': '#result'">
+	    <div class="form-group">
+	        <input type="hidden" name="event_id" value="{{ __SELF__.event_id }}" />
+	        <input type="hidden" name="user_id" value="2" />
+	    </div>
 		<fieldset class="person_info">
-			<legend>Person 1<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></legend>
+			<legend>Person <span class="num">1</span> <a class="editperson" href="javascript:void(0)">编辑</a><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></legend>
 	        <div class="form-group">
 	            <input type="text" class="form-control" value="" name="first_name[]" placeholder="First Name" />
 	        </div>
@@ -43,15 +47,13 @@
 			{% endif %}
 	        </div>
 		</fieldset>
-	        <div class="form-group">
-	            <input type="hidden" name="event_id" value="{{ __SELF__.event_id }}" />
-	            <input type="hidden" name="user_id" value="2" />
-	        </div>
-	        <div class="form-group">
-	            <button class="btn btn-default" type="submit">Register</button>
-	            <a class="btn btn-default align-right" href="javascript:void(0)">New</a>
-	        </div>
 	</form>
+	
+    <div class="form-group">
+        <button class="btn btn-default" type="submit">Register</button>
+        <a class="btn btn-default addperson" href="javascript:void(0)">New</a>
+    </div>
+	        
 	<div id="result"></div>
 	</div>
 </div>

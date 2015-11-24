@@ -1,5 +1,9 @@
 $(document).ready(function() {
-
+$('.addperson').click(function(){
+	personnode = $('#addPersonForm>fieldset.person_info:first-child').clone();
+	personnode.
+	personnode.appendTo($('#addPersonForm'));
+});
     $('#addPerson').bootstrapValidator({
 //        live: 'disabled',
         message: 'This value is not valid',
