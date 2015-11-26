@@ -1,8 +1,11 @@
 $(document).ready(function() {
 $('.addperson').click(function(){
-	personnode = $('#addPersonForm>fieldset.person_info:first-child').clone();
-	personnode.
+	personnode = $('#addPersonForm>fieldset.person_info:last-child').clone();
+	num = personnode.children("legend").children(".num").text();
+    personnode.children("legend").children(".num").text(1+num*1);
+
 	personnode.appendTo($('#addPersonForm'));
+    //alert(personnode.children(".num").text());
 });
     $('#addPerson').bootstrapValidator({
 //        live: 'disabled',
