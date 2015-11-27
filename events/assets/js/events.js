@@ -1,13 +1,20 @@
 $(document).ready(function() {
+	$('.submit').click(function(){
+		$('#addPersonForm').submit();
+	});
 $('.addperson').click(function(){
 	personnode = $('#addPersonForm>fieldset.person_info:last-child').clone();
-	num = personnode.children("legend").children(".num").text();
-    personnode.children("legend").children(".num").text(1+num*1);
+	current_num = personnode.children("legend").children(".num").text();
+	num = 1+current_num*1;
+    personnode.children("legend").children(".num").text(num);
+    ticketname = "tickets["+num+"][]";
+    personnode.children("form-group:last-child").find("input[type=checkbox]").attr("name",ticketname);
 
 	personnode.appendTo($('#addPersonForm'));
     //alert(personnode.children(".num").text());
 });
-    $('#addPerson').bootstrapValidator({
+//alert(2);
+    $('#addPersonForm').bootstrapValidator({
 //        live: 'disabled',
         message: 'This value is not valid',
         feedbackIcons: {
@@ -69,6 +76,22 @@ $('.addperson').click(function(){
                 }
             }
         }
-    });
+    }).on('success.form.bv', function(e) {
+            // Prevent form submission
+            e.preventDefault();
+
+            // Get the form instance
+            var $form = $(e.target);
+
+            // Get the BootstrapValidator instance
+            var bv = $form.data('bootstrapValidator');
+            var request_url = $("input[name='form_request']").val();
+            var update_opt = "{"+$("input[name='form_update']").val()+":'#result'}";
+            alert(update_opt);
+            
+			$form.request(request_url, {
+						update: {list:'#result'}
+							});;
+        });
 
 });
