@@ -87,10 +87,10 @@ $('.addperson').click(function(){
             var bv = $form.data('bootstrapValidator');
             var request_url = $("input[name='form_request']").val();
             var update_opt = "{"+$("input[name='form_update']").val()+":'#result'}";
-            alert(update_opt);
+            //alert(update_opt);
             
 			$form.request(request_url, {
-						update: {list:'#result'}
+			update: {'beysongEvents::list':'#result'}
 							});;
         });
 

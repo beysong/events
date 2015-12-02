@@ -73,7 +73,8 @@ class Events extends \Cms\Classes\ComponentBase
 
         $event_id = post('event_id');
         $user_id = post('user_id');
-
+        $this->page['result'] = array('1','42','124');
+		//return array('result'=>124);
 
     }
 
