@@ -2,18 +2,9 @@ $(document).ready(function() {
 	$('.submit').click(function(){
 		$('#addPersonForm').submit();
 	});
-$('.addperson').click(function(){
-	personnode = $('#addPersonForm>fieldset.person_info:last-child').clone();
-	current_num = personnode.children("legend").children(".num").text();
-	num = 1+current_num*1;
-    personnode.children("legend").children(".num").text(num);
-    ticketname = "tickets["+num+"][]";
-    personnode.children("form-group:last-child").find("input[type=checkbox]").attr("name",ticketname);
 
-	personnode.appendTo($('#addPersonForm'));
-    //alert(personnode.children(".num").text());
-});
 //alert(2);
+bookIndex = 0;
     $('#addPersonForm').bootstrapValidator({
 //        live: 'disabled',
         message: 'This value is not valid',
@@ -76,7 +67,33 @@ $('.addperson').click(function(){
                 }
             }
         }
-    }).on('success.form.bv', function(e) {
+    })
+        // Add button click handler
+    .on('click', '.addperson', function() {
+            var $template = $('.person_info_demo'),
+                $clone    = $template
+                                .clone()
+                                .removeClass('hide')
+                                .insertBefore($template),
+                $option1   = $clone.find('[name="first_name[]"]');
+                $option2   = $clone.find('[name="last_name[]"]');
+                $option3   = $clone.find('[name="company[]"]');
+                $option4   = $clone.find('[name="title[]"]');
+                $option5   = $clone.find('[name="mobile[]"]');
+                $option6   = $clone.find('[name="email[]"]');
+
+            // Add new field
+            $('#addPersonForm').bootstrapValidator('addField', $option1);
+            $('#addPersonForm').bootstrapValidator('addField', $option2);
+            $('#addPersonForm').bootstrapValidator('addField', $option3);
+            $('#addPersonForm').bootstrapValidator('addField', $option4);
+            $('#addPersonForm').bootstrapValidator('addField', $option5);
+            $('#addPersonForm').bootstrapValidator('addField', $option6);
+        
+    })
+    
+    
+    .on('success.form.bv', function(e) {
             // Prevent form submission
             e.preventDefault();
 
