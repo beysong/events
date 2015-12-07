@@ -84,6 +84,7 @@ $(document).ready(function() {
             $clone    = $template
                         .clone()
                         .removeClass('hide')
+                        .removeClass('person_info_demo')
                         .insertBefore($form22);
         
             $option1   = $clone.find('[name="first_name[]"]');
