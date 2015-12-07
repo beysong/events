@@ -14,12 +14,6 @@
     <div class="panel-body">
 <!--	<form id="addPersonForm" data-request="{{__SELF__}}::onRegisterPersons" data-request-update="'{{__SELF__}}::list': '#result'">-->
 	<form id="addPersonForm">
-	    <div class="form-group">
-	        <input type="hidden" name="form_request" value="{{__SELF__}}::onRegisterPersons" />
-	        <input type="hidden" name="form_update" value="{{__SELF__}}::list" />
-	        <input type="hidden" name="event_id" value="{{ __SELF__.event_id }}" />
-	        <input type="hidden" name="user_id" value="2" />
-	    </div>
 		<fieldset class="person_info">
 			<legend>Person <span class="num">1</span> <a class="editperson" href="javascript:void(0)">编辑</a><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></legend>
 	        <div class="form-group">
@@ -42,15 +36,19 @@
 	        </div>
 	        <div class="form-group">
 	        {% if tickets %}
-				<ul>
 			    {% for ticket in tickets %}
-			        <li><input type="checkbox" name="tickets[0][]" value="{{ ticket.id }}" />{{ ticket.name }}</li>
+			        <input type="checkbox" name="tickets[0][]" value="{{ ticket.id }}" />{{ ticket.name }}
 			    {% endfor %}
-				</ul>
 			{% endif %}
 	        </div>
 		</fieldset>
         <a class="btn btn-default addperson" href="javascript:void(0)">New</a>
+	    <div class="form-group">
+	        <input type="hidden" name="form_request" value="{{__SELF__}}::onRegisterPersons" />
+	        <input type="hidden" name="form_update" value="{{__SELF__}}::list" />
+	        <input type="hidden" name="event_id" value="{{ __SELF__.event_id }}" />
+	        <input type="hidden" name="user_id" value="2" />
+	    </div>
 	</form>
 
 
@@ -76,11 +74,9 @@
 	        </div>
 	        <div class="form-group">
 	        {% if tickets %}
-				<ul>
 			    {% for ticket in tickets %}
-			        <li><input type="checkbox" name="tickets" value="{{ ticket.id }}" />{{ ticket.name }}</li>
+			        <input type="checkbox" name="tickets" value="{{ ticket.id }}" />{{ ticket.name }}
 			    {% endfor %}
-				</ul>
 			{% endif %}
 	        </div>
 		</fieldset>

@@ -4,7 +4,15 @@ $(document).ready(function() {
 	});
 
 //alert(2);
-bookIndex = 0;
+    var ticketValidators = {
+            validators: {
+                notEmpty: {
+                    message: '请选择门票'
+                }
+            }
+	    },
+		bookIndex = 0;
+	
     $('#addPersonForm').bootstrapValidator({
 //        live: 'disabled',
         message: 'This value is not valid',
@@ -59,10 +67,10 @@ bookIndex = 0;
                     }
                 }
             },
-            'tickets[][]': {
+            'tickets[0][]': {
                 validators: {
                     notEmpty: {
-                        message: 'Please specify at least one language you can speak'
+                        message: '请选择门票'
                     }
                 }
             }
@@ -70,26 +78,33 @@ bookIndex = 0;
     })
         // Add button click handler
     .on('click', '.addperson', function() {
-            var $template = $('.person_info_demo'),
-                $clone    = $template
-                                .clone()
-                                .removeClass('hide')
-                                .insertBefore($template),
-                $option1   = $clone.find('[name="first_name[]"]');
-                $option2   = $clone.find('[name="last_name[]"]');
-                $option3   = $clone.find('[name="company[]"]');
-                $option4   = $clone.find('[name="title[]"]');
-                $option5   = $clone.find('[name="mobile[]"]');
-                $option6   = $clone.find('[name="email[]"]');
-
-            // Add new field
-            $('#addPersonForm').bootstrapValidator('addField', $option1);
-            $('#addPersonForm').bootstrapValidator('addField', $option2);
-            $('#addPersonForm').bootstrapValidator('addField', $option3);
-            $('#addPersonForm').bootstrapValidator('addField', $option4);
-            $('#addPersonForm').bootstrapValidator('addField', $option5);
-            $('#addPersonForm').bootstrapValidator('addField', $option6);
+    		bookIndex++;
+        var $template = $('.person_info_demo'),
+        	$form22=$('form>a'),
+            $clone    = $template
+                        .clone()
+                        .removeClass('hide')
+                        .insertBefore($form22);
         
+            $option1   = $clone.find('[name="first_name[]"]');
+            $option2   = $clone.find('[name="last_name[]"]');
+            $option3   = $clone.find('[name="company[]"]');
+            $option4   = $clone.find('[name="title[]"]');
+            $option5   = $clone.find('[name="mobile[]"]');
+            $option6   = $clone.find('[name="email[]"]');
+            $clone.find('[name="tickets"]').attr('name', 'tickets[' + bookIndex + '][]');
+            
+            
+		// Add new field
+		$('#addPersonForm').bootstrapValidator('addField', $option1)
+					        .bootstrapValidator('addField', $option2)
+					        .bootstrapValidator('addField', $option3)
+					        .bootstrapValidator('addField', $option4)
+					        .bootstrapValidator('addField', $option5)
+					        .bootstrapValidator('addField', $option6)
+							.bootstrapValidator('addField', 'tickets[' + bookIndex + '][]', ticketValidators);
+
+
     })
     
     
